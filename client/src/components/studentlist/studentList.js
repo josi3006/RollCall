@@ -84,7 +84,7 @@ const StudentList = ({ students, refreshStudentList }) => {
       })}
       {modalOpen && (
         <Modal closeModal={() => setModalOpen(false)}>
-          <h4> 👩‍🎓 {activeStudentName}</h4>
+          <h4>{activeStudentName}</h4>
           <p>{activeStudentId}</p>
           <hr />
           <h6>Assign to Teacher</h6>

@@ -1,12 +1,10 @@
 // import React from "react";
 import React, { Component } from "react";
 
-import M from "materialize-css/dist/js/materialize";
+// import M from "materialize-css/dist/js/materialize";
 import "materialize-css/dist/css/materialize.min.css";
-import Chat from "../../components/chat/chat";
 import ClassList from "../../components/class/class";
 import "./style.css";
-import teachers from "../../teachers.json";
 
 
 
@@ -31,16 +29,16 @@ class SideNav extends Component {
 
 
 
-	makeDropdown = () => {
+	// makeDropdown = () => {
 
-		let listArr = [];
+	// 	let listArr = [];
 
-		for (var i = 0; i < teachers.length; i++) {
-			var lastname = (teachers[i].caregiverfirstname + ' ' + teachers[i].caregiverlastname);
-			listArr.push(lastname);
-		}
-		this.setState({ teacherlist: listArr });
-	}
+	// 	for (var i = 0; i < teachers.length; i++) {
+	// 		var lastname = (teachers[i].caregiverfirstname + ' ' + teachers[i].caregiverlastname);
+	// 		listArr.push(lastname);
+	// 	}
+	// 	this.setState({ teacherlist: listArr });
+	// }
 
 
 	render() {
@@ -101,7 +99,7 @@ class SideNav extends Component {
 						</ul>
 						<div className='chatContainer' id='chatwindow'>
 							<div className='col s12'>
-								<Chat />
+								{/* <Chat /> */}
 							</div>
 						</div>
 					</ul>

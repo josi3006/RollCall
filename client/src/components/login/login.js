@@ -44,6 +44,7 @@ const Login = () => {
       </div>
       <div className="row">
         <div className="col s6">
+       
           <button
             id="loginbutton"
             className="btn waves-effect waves-light"
@@ -51,8 +52,9 @@ const Login = () => {
             name="action"
             onClick={handleLogin}
           >
-            Submit
+            Submert
           </button>
+      
         </div>
       </div>
     </div>

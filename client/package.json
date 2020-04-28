@@ -1,6 +1,6 @@
 {
-  "name": "mern",
-  "version": "0.1.0",
+  "name": "roll-call",
+  "version": "2.0.0",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
@@ -8,7 +8,6 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^5.1.2",
-    "socket.io": "^2.3.0",
     "react-scripts": "^2.1.1"
   },
   "scripts": {

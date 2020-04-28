@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import "materialize-css";
 
-import sideNav from "../../components/sidebarnav/index";
+// import sideNav from "../../components/sidebarnav/index";
 
 function SendButton() {
   return (

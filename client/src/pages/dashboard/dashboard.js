@@ -4,7 +4,7 @@ import fire from "../../firebase";
 
 import Navbar from "../../components/navbar/navbar";
 import StudentList from "../../components/studentlist/studentList";
-import SideNav from "../../components/sidebarnav";
+// import SideNav from "../../components/sidebarnav";
 // import { Sidenav } from "materialize-css";
 import "./style.css";
 
@@ -73,9 +73,9 @@ const Dashboard = () => {
                 value={newStudentName}
                 id="newStudentInput"
               />
-              <a className="waves-effect waves-light btn addStudent" onClick={() => addStudent(newStudentName)}>
+              <div className="waves-effect waves-light btn addStudent" onClick={() => addStudent(newStudentName)}>
                 Add Student<i class="material-icons right">add</i>
-              </a>
+              </div>
             </section>
           </div>
         </div>
