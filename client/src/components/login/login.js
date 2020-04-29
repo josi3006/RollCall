@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./login.css";
-
 import fire from "../../firebase";
 
 const Login = () => {
@@ -17,6 +16,10 @@ const Login = () => {
         window.location.replace(`${baseURL}/dashboard`);
       });
   };
+
+
+
+
 
   return (
     <div className="col s12 offset-s3" id="loggyform">

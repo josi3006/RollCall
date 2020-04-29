@@ -8,6 +8,8 @@ import StudentList from "../../components/studentlist/studentList";
 // import { Sidenav } from "materialize-css";
 import "./style.css";
 
+
+
 const Dashboard = () => {
   const [students, setStudents] = useState({});
   const [newStudentName, setNewStudentName] = useState("");
@@ -19,6 +21,7 @@ const Dashboard = () => {
     setNewStudentName("");
   };
 
+  
   const fetchStudents = () => {
     fire
       .database()
@@ -63,6 +66,7 @@ const Dashboard = () => {
           <SideNav />
         </div>
       </div> */}
+
       <div className="container">
         <div className="row">
           <div className="col s12">

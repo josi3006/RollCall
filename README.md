@@ -5,7 +5,7 @@ Deployed at https://majozakidtracker.herokuapp.com/
 
 ## Description
 
-Roll Call allows caregivers in a chilcare environment to keep a visual record of the children in their care, and to move children between caregivers, in real time.  While today's caregivers often have handheld technology at all times (tablets, phones), real-time student rolls are still kept on paper, if at all.  Our Roll Call app allows for easy and accurate records to be kept, on the fly.
+Roll Call allows caregivers in a childcare environment to keep a visual record of the children in their care, and to move children between caregivers, in real time.  While today's caregivers often have handheld technology at all times (tablets, phones), real-time student rolls are still kept on paper, if at all.  Our Roll Call app allows for easy and accurate records to be kept, on the fly.
 
 
 ### User Story
