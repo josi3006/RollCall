@@ -4,11 +4,8 @@ import fire from "../../firebase";
 
 import Navbar from "../../components/navbar/navbar";
 import StudentList from "../../components/studentlist/studentList";
-import SideNav from "../../components/sidebarnav";
-import { Sidenav } from "materialize-css";
+
 import "./style.css";
-
-
 
 const Dashboard = () => {
 	const [students, setStudents] = useState({});

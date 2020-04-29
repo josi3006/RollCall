@@ -1,6 +1,5 @@
 import React from "react";
 import "./navbar.css";
-import { Sidenav } from "materialize-css";
 
 function Navbar() {
 	return (
@@ -9,15 +8,15 @@ function Navbar() {
 				<div class='row'>
 					<div className='col s12'></div>
 					<img
-						// style={{ width: 550 }}
+						style={{ width: 550 }}
 						src='/rollcalllogohorizontal-min.png'
 						alt='Roll Call'
-						className='navlogo'
+						className='navlogo responsive-img'
 					/>
 				</div>
 
 				<div className='nav transparent z-depth-0'>
-					<ul id='nav-mobile' className='center hide-on-med-and-down '>
+					<ul id='nav-mobile' className='center  '>
 						<div className='buttoncontainer'>
 							<li>
 								<a className='transparent z-depth-0 waves-effect waves-light btn'>
