@@ -1,5 +1,6 @@
 import React from "react";
 import "./navbar.css";
+import { Sidenav } from "materialize-css";
 
 function Navbar() {
 	return (
