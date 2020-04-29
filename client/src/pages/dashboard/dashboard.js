@@ -61,7 +61,7 @@ const Dashboard = () => {
 			<Navbar />
 			<div className='container'>
 				<div className='row'>
-					<div className='center col s6'>
+					<div className='center col s4'>
 						<section>
 							<h5 className='newStudentHeader'>Add a Student</h5>
 							<input
