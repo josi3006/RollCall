@@ -69,19 +69,17 @@ const Dashboard = () => {
 			&nbsp;&nbsp;&nbsp;
 			<div className='center container'>
 				<div className='row'>
-					<div className='center col s2'>
-						<div>
-							<p className='newStudentHeader'>Student Check-In:</p>
-						</div>
-					</div>
-					<div className='col s4'>
+					<div className='col s12'>
 						<input
+							placeholder='Student Check-in'
 							onChange={(event) => setNewStudentName(event.currentTarget.value)}
 							value={newStudentName}
 							id='newStudentInput'
 						/>
+						&nbsp;
 					</div>
-					<div className='col s4'>
+
+					<div className='col s6  '>
 						<div
 							className='transparent z-depth-0 addstudent col s5'
 							onClick={() => addStudent(newStudentName)}>
