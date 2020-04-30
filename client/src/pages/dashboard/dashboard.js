@@ -80,17 +80,15 @@ const Dashboard = () => {
 				</div>
 			</div>
 			<div className='container'>
-				<div className='row'>
-					<div className='col s12 studentList '>
-						{loading ? (
-							<div>Loading...</div>
-						) : (
-							<StudentList
-								students={students}
-								refreshStudentList={fetchStudents}
-							/>
-						)}
-					</div>
+				<div className='col s12 studentList '>
+					{loading ? (
+						<div>Loading...</div>
+					) : (
+						<StudentList
+							students={students}
+							refreshStudentList={fetchStudents}
+						/>
+					)}
 				</div>
 			</div>
 		</>
