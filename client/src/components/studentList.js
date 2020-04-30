@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Modal from "./modal";
-// import { auth } from "../../firebase";
+import { auth } from "../../firebase";
 import { db } from "../services/firebase";
 
 import "./studentList.css";
@@ -32,7 +32,7 @@ const StudentList = ({ students, refreshStudentList }) => {
 	};
 
 	const assignToTeacher = () => {
-		const currentAssignedTeacherId = localStorage.getItem("UR_APP_teacher_id");
+		const currentAssignedTeacherId = auth().currentUser;
 		const updates = {};
 
 		// 1.  Remove the selected student from the current teacher..
