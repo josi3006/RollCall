@@ -10,6 +10,7 @@ export default class Chat extends Component {
     super(props);
     this.state = {
       user: auth().currentUser,
+      sender: auth().currentUser.email,
       chats: [],
       content: '',
       readError: null,
@@ -20,6 +21,10 @@ export default class Chat extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.myRef = React.createRef();
   }
+
+
+
+
 
   async componentDidMount() {
     this.setState({ readError: null, loadingChats: true });
@@ -34,11 +39,16 @@ export default class Chat extends Component {
         this.setState({ chats });
         chatArea.scrollBy(0, chatArea.scrollHeight);
         this.setState({ loadingChats: false });
+
       });
     } catch (error) {
       this.setState({ readError: error.message, loadingChats: false });
     }
   }
+
+
+
+
 
   handleChange(event) {
     this.setState({
@@ -54,7 +64,8 @@ export default class Chat extends Component {
       await db.ref("chats").push({
         content: this.state.content,
         timestamp: Date.now(),
-        uid: this.state.user.uid
+        uid: this.state.user.uid,
+        sender: this.state.sender
       });
       this.setState({ content: '' });
       chatArea.scrollBy(0, chatArea.scrollHeight);
@@ -75,7 +86,7 @@ export default class Chat extends Component {
 
 
 
-      <div className="container">
+      <div className="container" >
         <Navbar />
 
 
@@ -118,7 +129,8 @@ export default class Chat extends Component {
                 return <p key={chat.timestamp} className={"chat-bubble " + (this.state.user.uid === chat.uid ? "current-user" : "")}>
                   {chat.content}
                   <br />
-                  <span className="chat-time float-right"><small>{this.formatTime(chat.timestamp)}</small></span>
+                  <span className="chat-time float-right"><small>{this.formatTime(chat.timestamp)} {chat.sender}</small></span>
+
                 </p>
               })}
 
