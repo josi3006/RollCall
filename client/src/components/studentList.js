@@ -89,7 +89,7 @@ const StudentList = ({ students, refreshStudentList }) => {
 			{modalOpen && (
 				<Modal closeModal={() => setModalOpen(false)}>
 					<h4>{activeStudentName}</h4>
-					<hr />
+					
 					<h6>Assign to Teacher</h6>
 
 					<div className='select-box'>
@@ -102,6 +102,8 @@ const StudentList = ({ students, refreshStudentList }) => {
 								{teachers[teacher].name}
 							</div>
 						))}
+
+						
 					</div>
 					<button className="waves-effect waves-light btn" onClick={assignToTeacher}>Assign to Teacher</button>
 				</Modal>

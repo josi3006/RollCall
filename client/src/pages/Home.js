@@ -22,7 +22,7 @@ export default class HomePage extends Component {
                 </div>
               </div>
             </section>
-            <Footer></Footer>
+            <p><small>&copy; Sadovszky &amp; Sims 2020</small></p>
           </div>
         </div>
       </div>
