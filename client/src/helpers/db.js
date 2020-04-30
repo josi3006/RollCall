@@ -1,7 +1,4 @@
-import fire from "../../firebase"
-
-const db = fire.database();
-
+import { db } from "../services/firebase";
 
 export function readChats() {
   let abc = [];
