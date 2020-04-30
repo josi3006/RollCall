@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Modal from "./modal";
-import { auth } from "../services/firebase";
+// import { auth } from "../../firebase";
 import { db } from "../services/firebase";
 
 import "./studentList.css";
@@ -15,9 +15,8 @@ const StudentList = ({ students, refreshStudentList }) => {
 
 	useEffect(() => {
 		// fire
-    // 	.database()
-    db
-			.ref(`/teachers/`)
+		// 	.database()
+		db.ref(`/teachers/`)
 			.once("value")
 			.then((snapshot) => {
 				console.log("teachers", snapshot.val());
@@ -32,7 +31,7 @@ const StudentList = ({ students, refreshStudentList }) => {
 	};
 
 	const assignToTeacher = () => {
-		const currentAssignedTeacherId = auth().currentUser;
+		const currentAssignedTeacherId = localStorage.getItem("UR_APP_teacher_id");
 		const updates = {};
 
 		// 1.  Remove the selected student from the current teacher..
@@ -53,9 +52,8 @@ const StudentList = ({ students, refreshStudentList }) => {
 
 		// 3. Save and refresh....
 		// fire
-    // 	.database()
-    db
-			.ref()
+		// 	.database()
+		db.ref()
 			.update(updates)
 			.then(() => {
 				setModalOpen(false);
@@ -65,9 +63,9 @@ const StudentList = ({ students, refreshStudentList }) => {
 
 	return (
 		<div>
-
-
-			<h1 className='classHeader'>Students</h1>
+			<h1 className='studentheader'>Students:</h1>
+			<div className='center addbutton'>Move Class</div>
+			&nbsp;
 			{Object.keys(students).map((key) => {
 				const student = students[key];
 
@@ -89,7 +87,7 @@ const StudentList = ({ students, refreshStudentList }) => {
 			{modalOpen && (
 				<Modal closeModal={() => setModalOpen(false)}>
 					<h4>{activeStudentName}</h4>
-					
+					<hr />
 					<h6>Assign to Teacher</h6>
 
 					<div className='select-box'>
@@ -102,14 +100,14 @@ const StudentList = ({ students, refreshStudentList }) => {
 								{teachers[teacher].name}
 							</div>
 						))}
-
-						
 					</div>
-					<button className="waves-effect waves-light btn" onClick={assignToTeacher}>Assign to Teacher</button>
+					<button
+						className='waves-effect waves-light btn'
+						onClick={assignToTeacher}>
+						Assign to Teacher
+					</button>
 				</Modal>
 			)}
-
-
 		</div>
 	);
 };

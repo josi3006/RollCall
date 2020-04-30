@@ -64,23 +64,24 @@ const Dashboard = () => {
 	return (
 		<>
 			<Navbar />
-			<div className='container'>
+			&nbsp;&nbsp;&nbsp;
+			<div className='center container'>
 				<div className='row'>
-					<div className='center col s3'>
+					<div className='center col s2'>
 						<div>
 							<p className='newStudentHeader'>Student Check-In:</p>
 						</div>
 					</div>
-					<div className='col s6'>
+					<div className='col s4'>
 						<input
 							onChange={(event) => setNewStudentName(event.currentTarget.value)}
 							value={newStudentName}
 							id='newStudentInput'
 						/>
 					</div>
-					<div className='col s3'>
+					<div className='col s4'>
 						<div
-							className='center transparent z-depth-0 addStudent col s5'
+							className='transparent z-depth-0 addstudent col s5'
 							onClick={() => addStudent(newStudentName)}>
 							<div className='addbutton'>
 								<i class='material-icons icon-creamyyy'>add</i>
@@ -89,7 +90,6 @@ const Dashboard = () => {
 					</div>
 				</div>
 			</div>
-
 			<div className='container'>
 				<div className='row'>
 					<div className='col s12 studentList '>
@@ -104,7 +104,6 @@ const Dashboard = () => {
 					</div>
 				</div>
 			</div>
-
 			<Footer />
 		</>
 	);

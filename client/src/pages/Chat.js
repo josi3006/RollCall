@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import { auth } from "../services/firebase";
 import { db } from "../services/firebase";
 import Navbar from "../components/Navbar";
-import "./chat.css"
+import "./chat.css";
 
 export default class Chat extends Component {
   constructor(props) {
