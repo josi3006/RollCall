@@ -33,7 +33,9 @@ const Dashboard = () => {
 			.once("value")
 			.then((snapshot) => {
 				if (!snapshot.val()) {
-					console.log("Zach Sadovszky");
+					setStudents({});
+					setLoading(false);
+					return;
 				}
 				setStudents(snapshot.val());
 				setLoading(false);

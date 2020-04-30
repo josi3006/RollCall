@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Modal from "./modal";
-// import { auth } from "../../firebase";
+import { auth } from "../services/firebase";
 import { db } from "../services/firebase";
 
 import "./studentList.css";
-// import "materialize-css/dist/css/materialize.min.css";
 
 const StudentList = ({ students, refreshStudentList }) => {
 	const [modalOpen, setModalOpen] = useState(false);
@@ -12,14 +11,12 @@ const StudentList = ({ students, refreshStudentList }) => {
 	const [activeStudentName, setActiveStudentName] = useState(null);
 	const [selectedTeacherId, setSelectedTeacherId] = useState(null);
 	const [teachers, setTeachers] = useState({});
+	const [moveclassmodel, setMoveClassModel] = useState(false);
 
 	useEffect(() => {
-		// fire
-		// 	.database()
 		db.ref(`/teachers/`)
 			.once("value")
 			.then((snapshot) => {
-				console.log("teachers", snapshot.val());
 				setTeachers(snapshot.val());
 			});
 	}, []);
@@ -31,7 +28,7 @@ const StudentList = ({ students, refreshStudentList }) => {
 	};
 
 	const assignToTeacher = () => {
-		const currentAssignedTeacherId = localStorage.getItem("UR_APP_teacher_id");
+		const currentAssignedTeacherId = auth().currentUser.uid;
 		const updates = {};
 
 		// 1.  Remove the selected student from the current teacher..
@@ -51,8 +48,7 @@ const StudentList = ({ students, refreshStudentList }) => {
 		] = studentToTransfer;
 
 		// 3. Save and refresh....
-		// fire
-		// 	.database()
+
 		db.ref()
 			.update(updates)
 			.then(() => {
@@ -61,10 +57,34 @@ const StudentList = ({ students, refreshStudentList }) => {
 			});
 	};
 
+	const moveClass = () => {
+		const updates = {};
+		const currentAssignedTeacherId = auth().currentUser.uid;
+		// remove active teacher..
+		updates[`/teachers/${currentAssignedTeacherId}/students`] = null;
+		Object.keys(students).forEach((key) => {
+			const studentToTransfer = {
+				id: students[key].id,
+				name: students[key].name,
+			};
+			updates[
+				`/teachers/${selectedTeacherId}/students/${studentToTransfer.id}`
+			] = studentToTransfer;
+		});
+		db.ref()
+			.update(updates)
+			.then(() => {
+				setMoveClassModel(false);
+				refreshStudentList();
+			});
+	};
+
 	return (
 		<div>
 			<h1 className='studentheader'>Students:</h1>
-			<div className='center addbutton'>Move Class</div>
+			<div className='center addbutton' onClick={() => setMoveClassModel(true)}>
+				Move Class
+			</div>
 			&nbsp;
 			{Object.keys(students).map((key) => {
 				const student = students[key];
@@ -76,7 +96,7 @@ const StudentList = ({ students, refreshStudentList }) => {
 								{student.name}
 								<div
 									onClick={() => setActiveStudent(student)}
-									className='secondary-content modal-trigger'>
+									className='secondary-content'>
 									<i className='material-icons icon-creamyyy'>more</i>
 								</div>
 							</div>
@@ -105,6 +125,27 @@ const StudentList = ({ students, refreshStudentList }) => {
 						className='waves-effect waves-light btn'
 						onClick={assignToTeacher}>
 						Assign to Teacher
+					</button>
+				</Modal>
+			)}
+			{moveclassmodel && (
+				<Modal closeModal={() => setMoveClassModel(false)}>
+					<h4>Move class</h4>
+					<hr />
+
+					<div className='select-box'>
+						{Object.keys(teachers).map((teacher) => (
+							<div
+								onClick={() => setSelectedTeacherId(teacher)}
+								className={`teacher-option ${
+									teacher === selectedTeacherId ? "active" : null
+								}`}>
+								{teachers[teacher].name}
+							</div>
+						))}
+					</div>
+					<button className='waves-effect waves-light btn' onClick={moveClass}>
+						Move Class
 					</button>
 				</Modal>
 			)}
