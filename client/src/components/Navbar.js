@@ -23,17 +23,12 @@ function Navbar() {
 					<ul id='nav-mobile' className='center'>
 						<div className='buttoncontainer'>
 							<li>
-								<a className='transparent z-depth-0 waves-effect waves-light btn'>
-									Add a Student{" "}
-									<i className='material-icons icon-creamyyy right'>add</i>
-								</a>
-								<a className='transparent z-depth-0 waves-effect waves-light btn'>
-									Move Class{" "}
-									<i className='material-icons icon-creamyyy right'>
-										contact_mail
-									</i>
-								</a>
-
+								<Link
+									className='transparent z-depth-0 waves-effect waves-light btn'
+									to='/dashboard'>
+									Dashboard{" "}
+									<i class='material-icons icon-creamyyy right'>home</i>
+								</Link>
 								<Link
 									className='transparent z-depth-0 waves-effect waves-light btn'
 									to='/chat'>
@@ -43,25 +38,14 @@ function Navbar() {
 									</i>
 								</Link>
 
-								{/* 
-								<a className='transparent z-depth-0 waves-effect waves-light btn'>
-									Chat{" "}
-									<i className='material-icons icon-creamyyy right'>
-										question_answer
-									</i>
-								</a> */}
-								<a className='transparent z-depth-0 waves-effect waves-light btn'>
+								<Link
+									className='transparent z-depth-0 waves-effect waves-light btn'
+									to='/contact'>
 									Contact Parents{" "}
 									<i class='material-icons icon-creamyyy right'>
 										move_to_inbox
 									</i>
-								</a>
-								<a className='transparent z-depth-0 waves-effect waves-light btn'>
-									Teachers{" "}
-									<i className='material-icons icon-creamyyy right'>
-										perm_contact_calendar
-									</i>
-								</a>
+								</Link>
 							</li>
 						</div>
 					</ul>
