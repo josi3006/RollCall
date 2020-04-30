@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 // import fire from "../../firebase";
 
-// import { auth } from "../../firebase";
+import { auth } from "../services/firebase";
 // import { db } from "../../firebase";
 
 // import Navbar from "../../components/navbar/navbar";
@@ -25,7 +25,7 @@ const Dashboard = () => {
     const [newStudentName, setNewStudentName] = useState("");
     const [loading, setLoading] = useState(true);
 
-    const teacherID = localStorage.getItem("UR_APP_teacher_id");
+    const teacherID = auth().currentUser.email;
 
     const clearForm = () => {
         setNewStudentName("");
