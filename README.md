@@ -1,7 +1,7 @@
 
 ## Roll Call
 
-Deployed at https://majozakidtracker.herokuapp.com/
+Deployed at https://roll-call-2020.herokuapp.com/
 
 ## Description
 
