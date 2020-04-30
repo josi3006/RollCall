@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { db } from "../services/firebase";
 import Navbar from "../components/Navbar"
 
@@ -18,111 +18,114 @@ import "./dashboard.css";
 
 
 
-const Dashboard = () => {
 
 
-    const [students, setStudents] = useState({});
-    const [newStudentName, setNewStudentName] = useState("");
-    const [loading, setLoading] = useState(true);
+const [students, setStudents] = useState({});
+const [newStudentName, setNewStudentName] = useState("");
+const [loading, setLoading] = useState(true);
 
-    const teacherID = localStorage.getItem("UR_APP_teacher_id");
+const teacherID = localStorage.getItem("UR_APP_teacher_id");
 
-    const clearForm = () => {
-        setNewStudentName("");
-    };
+const clearForm = () => {
+    setNewStudentName("");
+};
 
-    const fetchStudents = () => {
-        // fire
-        // 	.database()
-        db
-            .ref(`/teachers/${teacherID}/students/`)
-            .once("value")
-            .then((snapshot) => {
-                if (!snapshot.val()) {
-                    console.log("Zach Sadovszky");
-                }
-                setStudents(snapshot.val());
-                setLoading(false);
-            });
-    };
+const fetchStudents = () => {
+    // fire
+    // 	.database()
+    db
+        .ref(`/teachers/${teacherID}/students/`)
+        .once("value")
+        .then((snapshot) => {
+            if (!snapshot.val()) {
+                console.log("Zach Sadovszky");
+            }
+            setStudents(snapshot.val());
+            setLoading(false);
+        });
+};
 
-    const addStudent = (studentName) => {
-        const updates = {};
-        const newStudentId = Date.now();
-        updates[`teachers/${teacherID}/students/${newStudentId}/id`] = newStudentId;
-        updates[
-            `teachers/${teacherID}/students/${newStudentId}/name`
-        ] = studentName;
-        // fire
-        //   .database()
-        db
-            .ref()
-            .update(updates)
-            .then(() => {
-                fetchStudents();
-                clearForm();
-            });
-    };
+const addStudent = (studentName) => {
+    const updates = {};
+    const newStudentId = Date.now();
+    updates[`teachers/${teacherID}/students/${newStudentId}/id`] = newStudentId;
+    updates[
+        `teachers/${teacherID}/students/${newStudentId}/name`
+    ] = studentName;
+    // fire
+    //   .database()
+    db
+        .ref()
+        .update(updates)
+        .then(() => {
+            fetchStudents();
+            clearForm();
+        });
+};
 
-    useEffect(() => {
-        fetchStudents();
-    }, []);
+useEffect(() => {
+    fetchStudents();
+}, []);
 
+export default class Dashboard extends Component {
 
+    render() {
 
-    return (
-        <>
-                    <Navbar />
+        return (
+            <>
+                <Navbar />
 
-            <div className='container'>
-                <div className='row'>
-                    <div className='center col s3'>
-                        <div>
-                            <p className='newStudentHeader'>Student Check-In:</p>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='center col s3'>
+                            <div>
+                                <p className='newStudentHeader'>Student Check-In:</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col s6">
-                        <input
-                            onChange={(event) =>
-                                setNewStudentName(event.currentTarget.value)
-                            }
-                            value={newStudentName}
-                            id='newStudentInput'
-                        />
-                    </div>
-                    <div className="col s3">
-                        <div
-                            className='center transparent z-depth-0 addStudent col s5'
-                            onClick={() => addStudent(newStudentName)}>
-                            <div className='addbutton'>
-                                <i class='material-icons icon-creamyyy'>add</i>
+                        <div className="col s6">
+                            <input
+                                onChange={(event) =>
+                                    setNewStudentName(event.currentTarget.value)
+                                }
+                                value={newStudentName}
+                                id='newStudentInput'
+                            />
+                        </div>
+                        <div className="col s3">
+                            <div
+                                className='center transparent z-depth-0 addStudent col s5'
+                                onClick={() => addStudent(newStudentName)}>
+                                <div className='addbutton'>
+                                    <i class='material-icons icon-creamyyy'>add</i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
-            <div className='container'>
-                <div className='row'>
-                    <div className='col s12 studentList '>
-                        {loading ? (
-                            <div>Loading...</div>
-                        ) : (
-                                <StudentList
-                                    students={students}
-                                    refreshStudentList={fetchStudents}
-                                />
-                            )}
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col s12 studentList '>
+                            {loading ? (
+                                <div>Loading...</div>
+                            ) : (
+                                    <StudentList
+                                        students={students}
+                                        refreshStudentList={fetchStudents}
+                                    />
+                                )}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <Footer />
-        </>
-    );
+                <Footer />
+            </>
+        );
+    };
 };
 
 
 
-export default Dashboard;
+
+// export default Dashboard;
