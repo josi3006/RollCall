@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { signin } from "../helpers/auth";
 import Logo from "../components/logo";
-import Footer from "../components/Footer"
+// import Footer from "../components/Footer"
 import "./login.css"
 
 export default class Login extends Component {
@@ -113,9 +113,7 @@ export default class Login extends Component {
 
         <p><small>&copy; Sadovszky &amp; Sims 2020</small></p>
 
-        {/* Get rid of footer component before build */}
-        <Footer />
-
+      
       </div >
     );
   }
