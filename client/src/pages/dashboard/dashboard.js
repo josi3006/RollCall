@@ -58,7 +58,7 @@ const Dashboard = () => {
 			<Navbar />
 			<div className='container'>
 				<div className='row'>
-					<div className='center col s4'>
+					<div className='center col s12'>
 						<section>
 							<h5 className='newStudentHeader'>Add a Student</h5>
 							<input
@@ -69,7 +69,7 @@ const Dashboard = () => {
 								id='newStudentInput'
 							/>
 							<div
-								className='center transparent z-depth-0 addStudent col s5'
+								className='  transparent z-depth-0 addStudent col s12'
 								onClick={() => addStudent(newStudentName)}>
 								<div className='addbutton'>
 									<i class='material-icons icon-creamyyy'>add</i>
