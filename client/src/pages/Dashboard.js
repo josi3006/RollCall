@@ -64,7 +64,6 @@ const Dashboard = () => {
 	return (
 		<>
 			<Navbar />
-
 			<div className='container'>
 				<div className='row'>
 					<div className='center col s3'>

@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 // import { Sidenav } from "materialize-css";
 
 function Navbar() {
-
-
 	return (
 		<>
 			<nav className='nav transparent z-depth-0'>
@@ -22,7 +20,7 @@ function Navbar() {
 				</div>
 
 				<div className='nav transparent z-depth-0'>
-					<ul id='nav-mobile' className='center hide-on-med-and-down '>
+					<ul id='nav-mobile' className='center'>
 						<div className='buttoncontainer'>
 							<li>
 								<a className='transparent z-depth-0 waves-effect waves-light btn'>
@@ -36,12 +34,16 @@ function Navbar() {
 									</i>
 								</a>
 
-
-                                <Link className="transparent z-depth-0 waves-effect waves-light btn" to="/chat">Chat<i className='material-icons icon-creamyyy right'>
+								<Link
+									className='transparent z-depth-0 waves-effect waves-light btn'
+									to='/chat'>
+									Chat
+									<i className='material-icons icon-creamyyy right'>
 										question_answer
-									</i></Link>
+									</i>
+								</Link>
 
-{/* 
+								{/* 
 								<a className='transparent z-depth-0 waves-effect waves-light btn'>
 									Chat{" "}
 									<i className='material-icons icon-creamyyy right'>
