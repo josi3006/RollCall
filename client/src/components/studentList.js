@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Modal from "./modal";
-import { auth } from "../service/firebase";
+import { auth } from "../services/firebase";
 import { db } from "../services/firebase";
 
 import "./studentList.css";
