@@ -17,7 +17,7 @@ SO THAT I can better care for my students.
 
 ## Demo
 
-![GIF description](gif path)
+![Screen Cap:](RollCall.gif)
 
 
 ## Technologies used
