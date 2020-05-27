@@ -3,18 +3,26 @@
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: top;
-	text-align: center;
-	height: auto;
+	/* text-align: center; */
+	height: 80px;
 }
 
 .navlogo {
-	align-content: center;
-	width: 80%;
+	align-content: left;
+	width: 60px;
 	height: auto;
-	align-content: center;
-	padding-top: 40px;
-	padding-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
-.navbarbuttons {
-	background-color: rgba(0, 0, 0, 0);
+
+
+.navbutton {
+	display: flex;
+	justify-content: center;
+	border: #ffffcc;
+	border-style: solid;
+	text-align: center;
+	border-radius: 12px;
+	padding-top: 10px;
 }
+

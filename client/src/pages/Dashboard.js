@@ -63,11 +63,16 @@ const Dashboard = () => {
 		fetchStudents();
 	}, []);
 
+
+	
+	
+
+
 	return (
 		<>
 			<Navbar />
-			&nbsp;&nbsp;&nbsp;
-			<div className='center container'>
+
+			<div className='container'>
 				<div className='row'>
 					<div className='center col s2'>
 						<div>

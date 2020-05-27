@@ -96,7 +96,7 @@ const StudentList = ({ students, refreshStudentList }) => {
 								{student.name}
 								<div
 									onClick={() => setActiveStudent(student)}
-									className='secondary-content'>
+									className='secondary-content'>CLizziky
 									<i className='material-icons icon-creamyyy'>more</i>
 								</div>
 							</div>
