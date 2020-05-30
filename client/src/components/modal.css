@@ -1,6 +1,6 @@
 .modal-wrapper {
 	position: fixed;
-    background-color: rgba(01, 01, 01, 0.4);
+	background-color: rgba(01, 01, 01, 0.4);
 
 	top: 0;
 	left: 0;
@@ -24,9 +24,25 @@
 
 }
 
+.modalinput {
+	color:#336633;
+}
+
+
 .close {
 	position: absolute;
 	right: 12px;
 	top: 12px;
 	cursor: pointer;
+}
+
+.modalbutton {
+
+	display: flex;
+	justify-content: center;
+	border: #336633;
+	border-style: solid;
+	width: 100px;
+	text-align: center;
+	border-radius: 12px;
 }

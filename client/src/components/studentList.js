@@ -81,7 +81,7 @@ const StudentList = ({ students, refreshStudentList }) => {
 
 	return (
 		<div>
-			<h1 className='studentheader'>Students:</h1>
+			<h3 className='studentheader'>Student List:</h3>
 			<div className='center addbutton' onClick={() => setMoveClassModel(true)}>
 				Move Class
 			</div>
@@ -91,14 +91,17 @@ const StudentList = ({ students, refreshStudentList }) => {
 
 				return (
 					<div key={student.id}>
-						<div className='collection-item transparent z-depth-0'>
+						<div className='transparent z-depth-0'>
 							<div className='studentname'>
-								{student.name}
+							{student.name}
+
 								<div
 									onClick={() => setActiveStudent(student)}
-									className='secondary-content'>CLizziky
-									<i className='material-icons icon-creamyyy'>more</i>
+									className='secondary-content left'>
+									<i className='material-icons icon-creamyyy' alt="Move">person_remove</i>
 								</div>
+
+
 							</div>
 						</div>
 					</div>
@@ -116,7 +119,7 @@ const StudentList = ({ students, refreshStudentList }) => {
 								onClick={() => setSelectedTeacherId(teacher)}
 								className={`teacher-option ${
 									teacher === selectedTeacherId ? "active" : null
-								}`}>
+									}`}>
 								{teachers[teacher].name}
 							</div>
 						))}
@@ -139,7 +142,7 @@ const StudentList = ({ students, refreshStudentList }) => {
 								onClick={() => setSelectedTeacherId(teacher)}
 								className={`teacher-option ${
 									teacher === selectedTeacherId ? "active" : null
-								}`}>
+									}`}>
 								{teachers[teacher].name}
 							</div>
 						))}

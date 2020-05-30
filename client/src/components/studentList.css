@@ -15,15 +15,15 @@ i.icon-creamyyy {
 }
 
 .studentname {
-	color: white;
+	color: #ffffcc;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .studentheader {
-	color: white;
-	font-family: "Pacifico", cursive;
-	text-align: center;
+	color: #ffffcc;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-align: left;
 }
 
 #modal1 {
@@ -70,4 +70,5 @@ i.icon-creamyyy {
 }
 .secondary-content {
 	cursor: pointer;
+	margin-right: 20px;
 }

@@ -6,7 +6,7 @@ import "./footer.css";
 function Footer() {
 	return (
 		<>
-			<footer class='transparent z-depth-0 sticky-footer'>
+			<footer class='transparent z-depth-1 sticky-footer'>
 				<div class='row'>
 					<div class='col s12'>
 						<div className='footercontainer'>

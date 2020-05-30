@@ -3,7 +3,6 @@
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: top;
-	/* text-align: center; */
 	height: 80px;
 }
 
@@ -11,18 +10,8 @@
 	align-content: left;
 	width: 60px;
 	height: auto;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	margin: 10px;
 }
 
 
-.navbutton {
-	display: flex;
-	justify-content: center;
-	border: #ffffcc;
-	border-style: solid;
-	text-align: center;
-	border-radius: 12px;
-	padding-top: 10px;
-}
 
