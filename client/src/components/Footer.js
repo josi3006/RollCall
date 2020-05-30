@@ -1,27 +1,54 @@
-import React from "react";
+// import React from "react";
+import React, { useEffect, useState } from "react";
+
 import { auth } from "../services/firebase";
+import Modal from "./modal";
+
 
 import "./footer.css";
 
 function Footer() {
+
+	const [modalOpen, setModalOpen] = useState(false);
+
+
 	return (
 		<>
-			<footer class='transparent z-depth-1 sticky-footer'>
-				<div class='row'>
-					<div class='col s12'>
+
+			{modalOpen && (
+				<Modal closeModal={() => setModalOpen(false)}>
+					<h5>Confirm Logout:</h5><hr /><br />
+
+					<div className='modalbutton' onClick={() => auth().signOut()}>Yes, log out.</div>
+					<div className='modalbutton'  onClick={() => setModalOpen(false)}>Cancel</div>
+
+				</Modal>
+			)}
+
+
+
+			<footer className='transparent'>
+
+				<div className="row">
+					<div ClassName="col s12">
+
 						<div className='footercontainer'>
 							<div
 								className='center addbutton'
-								onClick={() => auth().signOut()}>
+								onClick={() => setModalOpen(true)}>
+
 								Logout
 							</div>
 						</div>
-						<p className='center copyright'>
-							<medium>&copy; Sadovszky &amp; Sims 2020</medium>
-						</p>
+						<div className='copyright'>
+							<small>&copy; Sadovszky &amp; Sims 2020</small>
+						</div>
 					</div>
 				</div>
+
 			</footer>
+
+
 		</>
 	);
 }

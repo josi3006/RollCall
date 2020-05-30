@@ -84,7 +84,7 @@ const Dashboard = () => {
 					<h5>Add Student to List</h5>
 
 					<input
-						placeholder='Student Checkity-check'
+						placeholder='Student Name to Add'
 						onChange={(event) => setNewStudentName(event.currentTarget.value)}
 						value={newStudentName}
 						id='newStudentInput'

@@ -1,14 +1,26 @@
 .footercontainer {
 	display: flex;
-	justify-content: center;
+	justify-content: center;	
 }
 
 .copyright {
+	display: flex;
 	color: white;
+	justify-content: center;	
+
 }
 
 .addbutton {
 	width: 100px;
 	color: #ffffcc;
 	cursor: pointer;
+	margin: 10px;
+}
+
+footer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+
 }

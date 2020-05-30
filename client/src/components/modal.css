@@ -43,6 +43,9 @@
 	border: #336633;
 	border-style: solid;
 	width: 100px;
+	margin-top: 10px;
 	text-align: center;
 	border-radius: 12px;
+	cursor: pointer;
+
 }
