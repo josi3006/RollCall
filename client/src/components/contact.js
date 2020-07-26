@@ -1,14 +1,47 @@
-import React from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+// import React from "react";
+import React, { useEffect, useState } from "react";
+import { auth } from "../services/firebase";
+
+import Navbar from "../components/Navbar";
+import StudentList from "./studentList.js";
+
+import { db } from "../services/firebase";
+
 
 import "./contact.css";
 
-function contactComponent() {
+function Contact() {
+
+	const [students, setStudents] = useState({});
+	const [loading, setLoading] = useState(true);
+
+	const teacherID = auth().currentUser.uid;
+
+
+	const fetchStudents = () => {
+		// fire
+		// 	.database()
+		db.ref(`/teachers/${teacherID}/students/`)
+			.once("value")
+			.then((snapshot) => {
+				if (!snapshot.val()) {
+					setStudents({});
+					setLoading(false);
+					return;
+				}
+				setStudents(snapshot.val());
+				setLoading(false);
+			});
+	};
+
+	useEffect(() => {
+		fetchStudents();
+	}, []);
+
 	return (
 		<>
 			<Navbar />
-			&nbsp;
+
 			<div className='container'>
 				<div class='row'>
 					<form class='col s12'>
@@ -28,7 +61,7 @@ function contactComponent() {
 						<div class='row'>
 							<div class='input-field col s6'>
 								<input id='email' type='email' class='validate' />
-								<label for='email'>About their day</label>
+								<label for='email'>Message</label>
 							</div>
 							<div class='input-field col s6'>
 								<input id='email' type='email' class='validate' />
@@ -41,9 +74,28 @@ function contactComponent() {
 					</form>
 				</div>
 			</div>
-			<Footer />
+
+
+
+			<StudentList
+				students={students}
+				refreshStudentList={fetchStudents}
+			/>
+
+
+
+
+
+
+
 		</>
+
+
+
 	);
 }
 
-export default contactComponent;
+
+
+
+export default Contact;

@@ -17,9 +17,9 @@ function Footer() {
 
 			{modalOpen && (
 				<Modal closeModal={() => setModalOpen(false)}>
-					<h5>Confirm Logout:</h5><hr /><br />
+					<h5>Are you sure?</h5><hr /><br />
 
-					<div className='modalbutton' onClick={() => auth().signOut()}>Yes, log out.</div>
+					<div className='modalbutton' onClick={() => auth().signOut()}>Log out</div>
 					<div className='modalbutton'  onClick={() => setModalOpen(false)}>Cancel</div>
 
 				</Modal>

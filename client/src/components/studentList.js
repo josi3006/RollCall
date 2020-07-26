@@ -86,19 +86,25 @@ const StudentList = ({ students, refreshStudentList }) => {
 				Move Class
 			</div>
 			&nbsp;
+
+
+
+
 			{Object.keys(students).map((key) => {
 				const student = students[key];
+
+
 
 				return (
 					<div key={student.id}>
 						<div className='transparent z-depth-0'>
 							<div className='studentname'>
-							{student.name}
+								{student.name}
 
 								<div
 									onClick={() => setActiveStudent(student)}
 									className='secondary-content left'>
-									<i className='material-icons icon-creamyyy' alt="Move">person_remove</i>
+									<i className='material-icons icon-creamyyy' alt="Move" title='Remove Student from List'>person_remove</i>
 								</div>
 
 
@@ -152,6 +158,10 @@ const StudentList = ({ students, refreshStudentList }) => {
 					</button>
 				</Modal>
 			)}
+
+
+
+
 		</div>
 	);
 };
