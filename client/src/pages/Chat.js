@@ -142,10 +142,10 @@ export default class Chat extends Component {
 						</div>
 					</div>
 
-					<div>
+					{/* <div>
 						Logged in as:{" "}
 						<strong className='text-info'>{this.state.user.email}</strong>
-					</div>
+					</div> */}
 					<Footer />
 				</div>
 			</>

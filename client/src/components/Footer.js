@@ -33,12 +33,12 @@ function Footer() {
 					<div ClassName="col s12">
 
 						<div className='footercontainer'>
-							<div
+							{/* <div
 								className='center addbutton'
 								onClick={() => setModalOpen(true)}>
 
 								Logout
-							</div>
+							</div> */}
 						</div>
 						<div className='copyright'>
 							<small>&copy; Sadovszky &amp; Sims 2020</small>
