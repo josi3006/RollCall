@@ -122,13 +122,13 @@ function Navbar() {
 
 
 				<li><Link
-					className='left transparent z-depth-0 waves-effect waves-light btn teal-text text-darken-4'
-					to='/contact'>
-					Contact Parents{" "}
-					<i class='material-icons icon-creamyyy left'>
-						move_to_inbox
+							className='transparent z-depth-0 waves-effect waves-light btn'
+							onClick={() => setModalOpen(true)}>
+							Logout{" "}
+							<i class='material-icons icon-creamyyy right'>
+								follow_the_signs
 									</i>
-				</Link></li>
+						</Link></li>
 
 				<li><Link
 					className='left transparent z-depth-0 waves-effect waves-light btn teal-text text-darken-4'
