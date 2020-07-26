@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import Header from '../components/Header';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 import Logo from "../components/logo";
 import { Link } from 'react-router-dom';
 import "./home.css";
@@ -22,7 +22,7 @@ export default class HomePage extends Component {
                 </div>
               </div>
             </section>
-            <p><small>&copy; Sadovszky &amp; Sims 2020</small></p>
+            <Footer />
           </div>
         </div>
       </div>
