@@ -4,9 +4,13 @@
 }
 
 .error-text {
-	color: "#ffffcc";
+	color: #ffffcc;
 }
 
 .copyright {
-	color: white;
+	color: #ffffcc;
+}
+
+::placeholder {
+	color: #ffffcc;
 }

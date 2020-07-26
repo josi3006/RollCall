@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { signin } from "../helpers/auth";
-
+import Footer from "../components/Footer";
 import Logo from "../components/logo";
 
 import "./login.css";
@@ -15,8 +15,7 @@ export default class Login extends Component {
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-		// this.googleSignIn = this.googleSignIn.bind(this);
-		// this.githubSignIn = this.githubSignIn.bind(this);
+		
 	}
 
 	handleChange(event) {
@@ -35,21 +34,6 @@ export default class Login extends Component {
 		}
 	}
 
-	// async googleSignIn() {
-	//   try {
-	//     await signInWithGoogle();
-	//   } catch (error) {
-	//     this.setState({ error: error.message });
-	//   }
-	// }
-
-	// async githubSignIn() {
-	//   try {
-	//     await signInWithGitHub();
-	//   } catch (error) {
-	//     this.setState({ error: error.message });
-	//   }
-	// }
 
 	render() {
 		return (
@@ -107,10 +91,8 @@ export default class Login extends Component {
 						</div>
 					</div>
 				</form>
-				&nbsp; &nbsp;
-				<p className='center copyright'>
-					<medium>&copy; Sadovszky &amp; Sims 2020</medium>
-				</p>
+				
+				<Footer />
 			</div>
 		);
 	}

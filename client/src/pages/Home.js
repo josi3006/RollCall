@@ -26,6 +26,9 @@ export default class HomePage extends Component {
           </div>
         </div>
       </div>
+      
     )
+
+  
   }
 }
