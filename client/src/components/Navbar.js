@@ -125,7 +125,7 @@ function Navbar() {
 					className='left transparent z-depth-0 waves-effect waves-light btn teal-text text-darken-4'
 					onClick={() => setModalOpen(true)}>
 					Logout{" "}
-					<i class='material-icons icon-creamyyy right'>
+					<i class='material-icons icon-creamyyy left'>
 						follow_the_signs
 									</i>
 				</Link></li>
