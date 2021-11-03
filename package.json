@@ -37,6 +37,6 @@
     "react": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "styled-components": "^5.1.0",
-    "validator": "^13.0.0"
+    "validator": "^13.7.0"
   }
 }
